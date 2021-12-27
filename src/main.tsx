@@ -15,12 +15,11 @@ function Card({ title, paragraph }: CardProps) {
   );
 }
 
-const el = <Card title='Welcome! 123' paragraph='To this example' />;
+const el = <Card title="Welcome! 123" paragraph="To this example" />;
 const contentNode = document.getElementById('content');
 ReactDOM.render(el, contentNode);
-
-if (module.hot) {
-  module.hot.accept((err: Error) => {
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept((err: Error) => {
     console.log(err);
   });
 }
