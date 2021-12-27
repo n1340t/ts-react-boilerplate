@@ -6,13 +6,21 @@ type CardProps = {
   paragraph: string;
 };
 
-const Card = ({ title, paragraph }: CardProps) => (
-  <aside>
-    <h2>{title}</h2>
-    <p>{paragraph}</p>
-  </aside>
-);
+function Card({ title, paragraph }: CardProps) {
+  return (
+    <aside>
+      <h2>{title}</h2>
+      <p>{paragraph}</p>
+    </aside>
+  );
+}
 
-const el = <Card title="Welcome!" paragraph="To this example" />;
+const el = <Card title='Welcome! 123' paragraph='To this example' />;
 const contentNode = document.getElementById('content');
 ReactDOM.render(el, contentNode);
+
+if (module.hot) {
+  module.hot.accept((err: Error) => {
+    console.log(err);
+  });
+}
